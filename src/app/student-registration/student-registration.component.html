@@ -1,0 +1,89 @@
+<app-landing></app-landing>
+<h3>Student Details</h3>
+<form [formGroup]="studentsForm" (ngSubmit)="onSubmit(studentsForm)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" formControlName="studentname" placeholder="Student Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Father's Name</label>
+                    <input type="text" formControlName="fathername" placeholder="Father's Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <p-calendar formControlName="dateofbirth" dateFormat="dd/mm/yy" [monthNavigator]="true"
+                        [yearNavigator]="true" yearRange="2000:2030" placeholder="DD/MM/YYYY"  (onSelect)="formatDate($event)"
+                        [showIcon]="true"></p-calendar>
+                        <a class="date" (click)="bgExpiryDate()"><i class="fa fa-times"></i></a>
+                </div>
+                <div class="form-group">
+                    <label>Course Applied</label>
+                    <p-dropdown [options]="courseDetails" styleClass="prime-dropdown-override" formControlName="courseapplied"
+                optionLabel="course_name" placeholder="Select"></p-dropdown>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="text" formControlName="mobilenumber" placeholder="Mobile Number" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Email ID</label>
+                    <input type="text" formControlName="emailid" placeholder="Email ID" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div style="width: 100%;">
+                        <input type="radio" formControlName="gender" name="gender" value="male"/> Male &nbsp;
+                        <input type="radio" formControlName="gender" name="gender" value="female"/> FeMale 
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="uploadCSV">
+                    <div class="text-center">
+                        <img src="{{selectedimage}}" alt="" style="width: 200px;height: 200px;display: block;margin: auto;">
+                        <input type="file" (change)="incomingfile($event)" placeholder="Upload file" accept=".png,.jpg, .jpeg"
+                            formControlName="avatar" />
+                    </div>
+                </div><br><br>
+                <div class="form-group" style="width: 100%;">
+                    <label>Address</label>
+                    <textarea type="text" formControlName="address" class="form-control" ></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+<button type="button" (click)= "editstudents()" class="btn btn-info">Edit</button> &nbsp;
+<button type="button" (click)= "deletestudents()" class="btn btn-danger">Delete</button> <br> <br>
+<table class="table">
+    <thead>
+        <th>S.No</th>
+        <th>Students Name</th>
+        <th>Father's Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Course</th>
+        <th>Mobile Number</th>
+        <th>Submited On</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of allstudents; let i=index">
+            <td><input type="radio" value="{{item._id}}" [(ngModel)]="selectedid"> {{i+1}}</td>
+            <td>{{item.studentname}}</td>
+            <td>{{item.fathername}}</td>
+            <td>{{item.dateofbirth | date}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.courseapplied}}</td>
+            <td>{{item.mobilenumber}}</td>
+            <td>{{item.submitedon | date: 'medium'}}</td>
+        </tr>
+    </tbody>
+</table>

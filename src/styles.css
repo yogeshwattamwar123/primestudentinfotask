@@ -1,0 +1,66 @@
+.form-group label{
+    font-size: 15px;
+    line-height: 17px;
+    margin-bottom: 6px;
+    font-family: 'Nunito-SemiBold';
+    color: #000;width:95%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.form-group{width: 40%; margin: 0 1% 20px 0; float: left; position: relative}
+p-dropdown .ui-dropdown.ui-state-disabled{background-color: #e9ecef; opacity: 1;}
+p-dropdown .ui-dropdown.ui-state-disabled .ui-inputtext{background-color: #e9ecef;}
+p-dropdown .ui-dropdown.ui-state-disabled .ui-dropdown-trigger{background-color: #e9ecef;}
+p-calendar.ng-untouched[ng-reflect-is-disabled="true"] .ui-calendar.ui-calendar-w-btn{background-color: #e9ecef; opacity: 1;}
+p-calendar.ng-untouched[ng-reflect-is-disabled="true"] .ui-calendar.ui-calendar-w-btn .ui-inputtext{background-color: #e9ecef;opacity: 1}
+p-calendar.ng-untouched[ng-reflect-is-disabled="true"] .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger{opacity: 1}
+.ui-calendar.ui-calendar-w-btn{padding: 0 0;height: 35px;border: solid 2px #b4b4b4; width:100%; border-radius: 0px}
+.ui-calendar.ui-calendar-w-btn .pi{ font-size:20px !important}
+.ui-calendar.ui-calendar-w-btn .pi.pi-chevron-right, .ui-calendar.ui-calendar-w-btn .pi.pi-chevron-left{font-size: 16px !important}
+.ui-calendar .ui-inputtext {
+    border: 0px none;
+    padding: 0 0 0 10px;
+    width: calc(100% - 33px);
+    float: left;
+    line-height: 31px;
+}
+.ui-calendar button, .ui-calendar button:active, .ui-calendar button:focus, .ui-calendar button:hover {
+    box-shadow: none !important;
+    background: none !important;
+    border-radius: 0;
+    color: #000 !important;
+    border: 0px none !important;
+}
+.ui-dropdown {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    min-width: 100px;
+    width: 100%;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-family: 'Nunito-SemiBold';
+    line-height: 1.5;
+    color: #000;
+    vertical-align: middle;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC) no-repeat right .75rem center/8px 10px;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: solid 2px #b4b4b4;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    word-wrap: normal;
+    cursor: pointer;
+}
+.date {
+    top: 18x;
+    right: 44px;
+    position: absolute;
+    top: 35px;
+}

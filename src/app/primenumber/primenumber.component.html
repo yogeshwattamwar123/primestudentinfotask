@@ -1,0 +1,8 @@
+<app-landing></app-landing>
+
+<input type="text" [(ngModel)]="txtprime">
+<button (click)="filterprime()">Filter</button>
+<br>
+<div *ngFor="let item of output">
+    {{item}}
+</div>
